@@ -1,0 +1,147 @@
+/*Student DataBase Tables*/
+
+.student-main {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.student-body {
+  margin: 1.5rem;
+  padding: 1rem;
+  background-color: #e0e0e00b;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.058);
+  overflow: hidden;
+}
+
+.student-body1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  margin: 1.5rem;
+  padding: 1rem;
+  background-color: #e0e0e00b;
+  font-weight: bolder;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.058);
+}
+.student-title h2 {
+  color: #0077ff;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.111);
+}
+
+.student-search {
+  display: flex;
+  margin-bottom: 1rem;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+.student-search::placeholder {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #a0a0a0;
+}
+.student-search:focus {
+  border: 1px solid blue;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 3%;
+  width: 100%;
+  min-width: 500px;
+  text-align: center;
+}
+
+.table th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.198);
+  padding: 10px;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+.table th {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: rgba(209, 208, 208, 0.552);
+}
+
+/*Student DataBase btn*/
+
+.btn-delete-student {
+  float: right;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: #ec2c2cea;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-delete-student:hover {
+  background: #9b2222ec;
+}
+
+.btn-update-student {
+  float: right;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background: #0077ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-update-student:hover {
+  background: #005bc2;
+}
+
+/*end Student DataBase Tables*/
+
+@media (max-width: 660px) {
+  .search-container {
+    justify-content: center;
+  }
+  .search-input {
+    width: 90%;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table th:nth-child(3),
+  .table td:nth-child(3),
+  .table th:nth-child(5),
+  .table td:nth-child(5) {
+    display: none;
+  }
+}

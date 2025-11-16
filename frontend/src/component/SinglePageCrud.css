@@ -1,0 +1,107 @@
+.single-crud-main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8080805a;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.single-crud-form {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 10px 6px rgba(128, 128, 128, 0.32);
+  position: relative;
+  max-height: 90vh; /* Make form scrollable if it grows too tall */
+  overflow-y: auto;
+}
+.single-crud-form h1 {
+  color: #0d6efd;
+}
+
+.crud-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crud-form label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+
+.crud-form input {
+  width: 200px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(128, 128, 128, 0.644);
+}
+
+.crud-form input:focus {
+  outline: none;
+  border: 1px solid rgb(77, 75, 75);
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.btn-close:focus {
+  border: none;
+}
+
+/*Table*/
+
+.crud-fetch-details {
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 25px;
+  overflow: auto;
+}
+
+.crud-table {
+  border-collapse: collapse;
+  margin: 30px 0px;
+  padding: 30px 50px;
+  width: 100%;
+}
+
+.crud-table th {
+  background-color: rgba(0, 0, 0, 0.767);
+  color: #ffffff;
+}
+.crud-table th,
+td {
+  border: 1px solid rgba(64, 63, 63, 0.407);
+  text-align: center;
+  padding: 8px;
+  word-wrap: break-word;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  border-radius: 3px;
+  padding: 0px 20px;
+  margin: 3px;
+}
+
+@media (max-width: 660px) {
+  .single-crud-main {
+    margin-top: 50px;
+  }
+}

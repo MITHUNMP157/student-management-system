@@ -1,0 +1,11 @@
+.login-crud-table {
+  margin-top: 95px;
+  padding: 10px;
+  overflow: scroll;
+}
+
+@media (max-width: 660px) {
+  .login-crud-table {
+    margin-top: 0px;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/student-crud-app-v4/static/css/main.16f15a97.css",
+    "main.js": "/student-crud-app-v4/static/js/main.9c66b0e6.js",
+    "index.html": "/student-crud-app-v4/index.html",
+    "main.16f15a97.css.map": "/student-crud-app-v4/static/css/main.16f15a97.css.map",
+    "main.9c66b0e6.js.map": "/student-crud-app-v4/static/js/main.9c66b0e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16f15a97.css",
+    "static/js/main.9c66b0e6.js"
+  ]
+}
