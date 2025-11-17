@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
-import { StudentContext } from "../context/StudentContext";
+import { StudentContext } from "../../context/StudentContext";
 import { ToastContainer } from "react-toastify";
 
 const LoginForm = ({ setLogin }) => {

@@ -1,17 +1,17 @@
 import "./App.css";
 import Header from "./component/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Register from "./component/Register";
+import Register from "./component/singpagecrud/Register";
 import Home from "./component/Home";
-import StudentDetails from "./component/StudentDetails";
-import ManagementDB from "./component/ManagementDB";
-import LoginForm from "./component/LoginForm";
+import StudentDetails from "./component/database/StudentDetails";
+import ManagementDB from "./component//database/ManagementDB";
+import LoginForm from "./component/register-login/LoginForm";
 import { useState, useEffect } from "react";
-import SinglePageCrud from "./component/SinglePageCrud";
-import LoginFormCrud from "./component/LoginFormCrud";
-import RegisterForm from "./component/RegisterForm";
-import RegisterFormLogin from "./component/RegisterFormLogin";
-import ProductedRoute from "./component/ProductedRoute";
+import SinglePageCrud from "./component/singpagecrud/SinglePageCrud";
+import LoginFormCrud from "./component/singpagecrud/LoginFormCrud";
+import RegisterForm from "./component/register-login/RegisterForm";
+import RegisterFormLogin from "./component/register-login/RegisterFormLogin";
+import ProductedRoute from "./component/production-route/ProductedRoute";
 
 function App() {
   return (

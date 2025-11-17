@@ -7,6 +7,8 @@ export const StudentContext = createContext();
 export const StudentProvider = ({ children }) => {
   const navigate = useNavigate();
 
+  const REACT_APP_URL = process.env.REACT_APP_URL;
+
   /*StudentDataBase state use to GET/DELETE API Array purpose*/
   const [studentDataBase, setStudentDataBase] = useState([]);
   const [managementDB, setManagementDB] = useState([]);
@@ -87,17 +89,14 @@ export const StudentProvider = ({ children }) => {
       /*Update API*/
 
       try {
-        const res = await fetch(
-          `http://localhost:3030/editdata/${formData._id}`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(studentData),
-          }
-        );
+        const res = await fetch(`${REACT_APP_URL}editdata/${formData._id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(studentData),
+        });
         const data = await res.json();
         toast.success("Student updated successfully!");
         fetchStudentData(data);
@@ -111,7 +110,7 @@ export const StudentProvider = ({ children }) => {
       /*Upload(New Register) API*/
 
       try {
-        const res = await fetch(`http://localhost:3030/studentRegister`, {
+        const res = await fetch(`${REACT_APP_URL}studentRegister`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -144,7 +143,7 @@ export const StudentProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:3030/getdata", {
+      const res = await fetch(`${REACT_APP_URL}getdata`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -161,7 +160,7 @@ export const StudentProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:3030/getdata/managementDB", {
+      const res = await fetch(`${REACT_APP_URL}getdata/managementDB`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -187,7 +186,7 @@ export const StudentProvider = ({ children }) => {
 
   /*Delete API*/
   const deleteData = (id) => {
-    fetch(`http://localhost:3030/delete/${id}`, {
+    fetch(`${REACT_APP_URL}delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -207,7 +206,7 @@ export const StudentProvider = ({ children }) => {
     if (!form.username || !form.email || !form.password) {
       alert("Please fill input fields");
     } else {
-      fetch("http://localhost:5050/login", {
+      fetch(`http://localhost:5050/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

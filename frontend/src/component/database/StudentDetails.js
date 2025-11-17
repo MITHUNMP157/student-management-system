@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./StudentDetails.css";
 import { ToastContainer } from "react-toastify";
-import { StudentContext } from "../context/StudentContext";
+import { StudentContext } from "../../context/StudentContext";
 
 const StudentDetails = () => {
   const { studentDataBase } = useContext(StudentContext);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { verifyToken } from "./Auth";
+import { verifyToken } from "../auth/Auth";
 import { Navigate } from "react-router-dom";
 
 const ProductedRoute = ({ children }) => {

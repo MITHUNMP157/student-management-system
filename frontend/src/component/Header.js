@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { logout } from "./Auth";
+import { logout } from "./auth/Auth";
 
 const Header = ({ setIsLoggedIn }) => {
   return (

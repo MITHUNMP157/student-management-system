@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./Register.css";
+import "./Home.css";
 import { toast, ToastContainer } from "react-toastify";
 import { StudentContext } from "../context/StudentContext";
 import { useNavigate } from "react-router-dom";

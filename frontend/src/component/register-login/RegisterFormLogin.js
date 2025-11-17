@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { login } from "./Auth";
+import { login } from "../auth/Auth";
 
 const RegisterFormLogin = () => {
   const [userLoginData, setUserLoginData] = useState({

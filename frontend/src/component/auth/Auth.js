@@ -1,6 +1,6 @@
 import React from "react";
 
-const API_URL = "http://localhost:3030/";
+const API_URL = process.env.REACT_APP_URL;
 
 export const register = async (username, password, role) => {
   try {
