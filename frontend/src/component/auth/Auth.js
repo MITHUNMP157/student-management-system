@@ -1,7 +1,6 @@
 import React from "react";
 
-const API_URL =
-  "REACT_APP_URL=https://student-management-system-backend-78t4.onrender.com/";
+const API_URL = "https://student-management-system-backend-78t4.onrender.com/";
 
 export const register = async (username, password, role) => {
   try {
