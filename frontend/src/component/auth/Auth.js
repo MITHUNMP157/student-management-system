@@ -11,10 +11,22 @@ export const register = async (username, password, role) => {
       },
       body: JSON.stringify({ username, password, role }),
     });
-    const data = await resRegister.json();
+    const rawData = await resRegister.text();
+
+    let data;
+
+    try {
+      data = rawData ? JSON.parse(rawData) : null;
+    } catch (raw) {
+      console.log("Invalid JSON Response:", raw);
+      throw new Error("Server did not return valid JSON");
+    }
+
     if (!resRegister.ok) {
       throw new Error(data.message || "Register Failed");
     }
+
+    return data;
   } catch (error) {
     console.error("Error during registration:", error.message);
     throw error;
