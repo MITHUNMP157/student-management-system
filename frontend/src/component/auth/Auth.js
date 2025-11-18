@@ -42,16 +42,7 @@ export const login = async (username, password) => {
       },
       body: JSON.stringify({ username, password }),
     });
-    const rawData = await response.text();
-
-    let data;
-
-    try {
-      data = rawData ? JSON.parse(rawData) : null;
-    } catch (raw) {
-      console.log("Invalid JSON Response:", raw);
-      throw new Error("Server did not return valid JSON");
-    }
+    const data = await response.json();
     if (!response.ok) {
       throw new Error(data.message || "Invalid Credentials");
     }
@@ -86,16 +77,7 @@ export const verifyToken = async () => {
     if (!response.ok) {
       return { valid: false };
     }
-    const rawData = await response.text();
-
-    let data;
-
-    try {
-      data = rawData ? JSON.parse(rawData) : null;
-    } catch (raw) {
-      console.log("Invalid JSON Response:", raw);
-      throw new Error("Server did not return valid JSON");
-    }
+    const data = await response.json();
 
     return data;
   } catch (error) {
