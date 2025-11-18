@@ -4,7 +4,6 @@ import { toast, ToastContainer } from "react-toastify";
 import { login } from "../auth/Auth";
 
 const RegisterFormLogin = () => {
-  const REACT_APP_URL = process.env.REACT_APP_URL;
   const [userLoginData, setUserLoginData] = useState({
     username: "",
     password: "",
