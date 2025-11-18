@@ -63,7 +63,7 @@ const Header = ({ setIsLoggedIn }) => {
                 */}
                 <li>
                   <Link
-                    to="/registerformlogin"
+                    to="/login-portal"
                     className="student-link"
                     onClick={logout}
                   >

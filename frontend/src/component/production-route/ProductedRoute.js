@@ -16,7 +16,7 @@ const ProductedRoute = ({ children }) => {
     return <p>Checking authentication.....</p>;
   }
 
-  return isValid ? children : <Navigate to="/registerformlogin" replace />;
+  return isValid ? children : <Navigate to="/login-portal" replace />;
 };
 
 export default ProductedRoute;

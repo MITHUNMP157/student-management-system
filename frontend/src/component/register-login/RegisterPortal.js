@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { register } from "../auth/Auth";
 
-const RegisterForm = () => {
+const RegisterPortal = () => {
   const [userLoginData, setUserLoginData] = useState({
     username: "",
     password: "",
@@ -37,7 +37,7 @@ const RegisterForm = () => {
       setError("");
       toast.success("Registered Successfully");
       setTimeout(() => {
-        navigate("/registerformlogin");
+        navigate("/login-portal");
       }, 3000);
     } catch (error) {
       console.log("Registration Error:", error);
@@ -95,7 +95,7 @@ const RegisterForm = () => {
                   Register
                 </button>
               </div>
-              <Link to="/registerformlogin" style={{ textDecoration: "none" }}>
+              <Link to="/login-portal" style={{ textDecoration: "none" }}>
                 <p className="text-dark text-end">Click to Login</p>
               </Link>
             </div>
@@ -116,4 +116,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default RegisterPortal;

@@ -1,10 +1,11 @@
 import React from "react";
 
-const REACT_APP_URL = process.env.REACT_APP_URL;
+const REACT_APP_AUTH_URL =
+  "https://student-management-system-backend-78t4.onrender.com";
 
 export const register = async (username, password, role) => {
   try {
-    const resRegister = await fetch(`${REACT_APP_URL}/register`, {
+    const resRegister = await fetch(`${REACT_APP_AUTH_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -14,11 +15,9 @@ export const register = async (username, password, role) => {
     const rawData = await resRegister.text();
 
     let data;
-    console.log(REACT_APP_URL);
 
     try {
       data = rawData ? JSON.parse(rawData) : null;
-      console.log(data);
     } catch (raw) {
       console.log("Invalid JSON Response:", raw);
       throw new Error("Server did not return valid JSON");
@@ -37,7 +36,7 @@ export const register = async (username, password, role) => {
 
 export const login = async (username, password) => {
   try {
-    const response = await fetch(`${REACT_APP_URL}/login`, {
+    const response = await fetch(`${REACT_APP_AUTH_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +54,6 @@ export const login = async (username, password) => {
     localStorage.setItem("token", token);
     localStorage.setItem("role", role);
     localStorage.setItem("username", userName);
-    console.log("LOGIN RESPONSE:", data);
     return token;
   } catch (error) {
     console.error(
@@ -70,7 +68,7 @@ export const verifyToken = async () => {
   const token = localStorage.getItem("token");
   if (!token) return { valid: false };
   try {
-    const response = await fetch(`${REACT_APP_URL}/verifyToken`, {
+    const response = await fetch(`${REACT_APP_AUTH_URL}/verifyToken`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { login } from "../auth/Auth";
 
-const RegisterFormLogin = () => {
+const LoginPortal = () => {
   const [userLoginData, setUserLoginData] = useState({
     username: "",
     password: "",
@@ -38,6 +38,7 @@ const RegisterFormLogin = () => {
       navigate("/");
     } catch (error) {
       console.log("Login Error:", error.message);
+      console.log(origin);
       setError(error.message || "Login Failed");
       setSuccess("");
       toast.error(error.message || "Login Failed");
@@ -83,7 +84,7 @@ const RegisterFormLogin = () => {
                 </button>
               </div>
             </div>
-            <Link to="/registerform" style={{ textDecoration: "none" }}>
+            <Link to="/register-portal" style={{ textDecoration: "none" }}>
               <p className="text-dark text-end">Register</p>
             </Link>
           </div>
@@ -103,4 +104,4 @@ const RegisterFormLogin = () => {
   );
 };
 
-export default RegisterFormLogin;
+export default LoginPortal;

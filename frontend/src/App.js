@@ -7,8 +7,8 @@ import Register from "./component/entrollment/StudentEntrollment";
 import UserProfile from "./component/profile/UserProfile";
 import StudentDB from "./component/database/StudentDB";
 import ManagementDB from "./component//database/ManagementDB";
-import RegisterForm from "./component/register-login/RegisterPortal";
-import RegisterFormLogin from "./component/register-login/LoginPortal";
+import RegisterPortal from "./component/register-login/RegisterPortal";
+import LoginPortal from "./component/register-login/LoginPortal";
 import ProductedRoute from "./component/production-route/ProductedRoute";
 
 import SinglePageCrud from "./component/singpagecrud/SinglePageCrud";
@@ -64,8 +64,8 @@ function App() {
             </ProductedRoute>
           }
         />
-        <Route path="/registerform" element={<RegisterForm />} />
-        <Route path="/registerformlogin" element={<RegisterFormLogin />} />
+        <Route path="/register-portal" element={<RegisterPortal />} />
+        <Route path="/login-portal" element={<LoginPortal />} />
       </Routes>
     </div>
   );
