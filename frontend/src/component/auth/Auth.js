@@ -5,13 +5,16 @@ const REACT_APP_AUTH_URL =
 
 export const register = async (username, password, role) => {
   try {
-    const resRegister = await fetch(`${REACT_APP_AUTH_URL}/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password, role }),
-    });
+    const resRegister = await fetch(
+      `${"https://student-management-system-backend-78t4.onrender.com"}/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password, role }),
+      }
+    );
     const rawData = await resRegister.text();
 
     let data;
@@ -36,13 +39,16 @@ export const register = async (username, password, role) => {
 
 export const login = async (username, password) => {
   try {
-    const response = await fetch(`${REACT_APP_AUTH_URL}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    const response = await fetch(
+      `${"https://student-management-system-backend-78t4.onrender.com"}/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      }
+    );
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.message || "Invalid Credentials");
@@ -68,12 +74,15 @@ export const verifyToken = async () => {
   const token = localStorage.getItem("token");
   if (!token) return { valid: false };
   try {
-    const response = await fetch(`${REACT_APP_AUTH_URL}/verifyToken`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `${"https://student-management-system-backend-78t4.onrender.com"}/verifyToken`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     if (!response.ok) {
       return { valid: false };
     }
