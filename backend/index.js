@@ -6,15 +6,15 @@ const port = 3030;
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 
-//app.use(
-//  cors({
-//    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
-//    methods: ["GET", "POST", "PUT", "DELETE"],
-//    credentials: true,
-//  })
-//);
+app.use(
+  cors({
+    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 const users = [];
 
