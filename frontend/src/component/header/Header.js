@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./Header.css";
 import { logout } from "../auth/Auth";
 import CollageLogo from "./CollageLogo";
 
