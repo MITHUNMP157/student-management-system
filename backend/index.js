@@ -6,15 +6,15 @@ const port = 3030;
 const cors = require("cors");
 
 app.use(express.json());
-//app.use(cors());
+app.use(cors());
 
-app.use(
-  cors({
-    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+//app.use(
+//  cors({
+//    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
+//    methods: ["GET", "POST", "PUT", "DELETE"],
+//    credentials: true,
+//  })
+//);
 
 const users = [];
 
@@ -159,6 +159,17 @@ async function run() {
     });
 
     app.get("/getdata", verifyToken(), async (req, res) => {
+      try {
+        const sdata = student.find();
+        const result = await sdata.toArray();
+        res.json(result);
+        console.log(`Server data get success...`);
+      } catch (error) {
+        console.error("Get Student error:", error);
+        res.status(500).send("Server error");
+      }
+    });
+    app.get("/testgetdata", async (req, res) => {
       try {
         const sdata = student.find();
         const result = await sdata.toArray();
