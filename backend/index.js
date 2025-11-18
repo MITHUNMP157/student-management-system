@@ -8,14 +8,25 @@ const mongoose = require("mongoose");
 const User = require("./models/UserModel.js");
 
 app.use(express.json());
-//app.use(cors());
-app.use(
-  cors({
-    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
+
+// const allowedOrigins = [
+//   "https://student-management-system-frontend-ektr.onrender.com",
+//   "http://localhost:3000",
+// ];
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
 
 const users = [];
 
@@ -83,7 +94,7 @@ async function run() {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const registerDetail = await student.insertOne({
+        const registerDetail = await authorized.insertOne({
           username,
           password: hashedPassword,
           role: role || "user",
