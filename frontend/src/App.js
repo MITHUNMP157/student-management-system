@@ -1,17 +1,19 @@
+import { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./component/Header";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Register from "./component/singpagecrud/Register";
 import Home from "./component/Home";
-import StudentDetails from "./component/database/StudentDetails";
+import Register from "./component/entrollment/StudentEntrollment";
+import UserProfile from "./component/profile/UserProfile";
+import StudentDB from "./component/database/StudentDB";
 import ManagementDB from "./component//database/ManagementDB";
-import LoginForm from "./component/register-login/LoginForm";
-import { useState, useEffect } from "react";
+import RegisterForm from "./component/register-login/RegisterPortal";
+import RegisterFormLogin from "./component/register-login/LoginPortal";
+import ProductedRoute from "./component/production-route/ProductedRoute";
+
 import SinglePageCrud from "./component/singpagecrud/SinglePageCrud";
 import LoginFormCrud from "./component/singpagecrud/LoginFormCrud";
-import RegisterForm from "./component/register-login/RegisterForm";
-import RegisterFormLogin from "./component/register-login/RegisterFormLogin";
-import ProductedRoute from "./component/production-route/ProductedRoute";
+import LoginForm from "./component/register-login/LoginForm";
 
 function App() {
   return (
@@ -40,7 +42,7 @@ function App() {
           element={
             <ProductedRoute>
               <Header />
-              <StudentDetails />
+              <StudentDB />
             </ProductedRoute>
           }
         />
@@ -54,15 +56,14 @@ function App() {
           }
         />
         <Route
-          path="/singlecrud"
+          path="/userprofile"
           element={
             <ProductedRoute>
               <Header />
-              <SinglePageCrud />
+              <UserProfile />
             </ProductedRoute>
           }
         />
-        <Route path="/logincrud" element={<LoginFormCrud />} />
         <Route path="/registerform" element={<RegisterForm />} />
         <Route path="/registerformlogin" element={<RegisterFormLogin />} />
       </Routes>

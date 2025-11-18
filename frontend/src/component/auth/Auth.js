@@ -1,7 +1,6 @@
 import React from "react";
 
-const REACT_APP_URL =
-  "https://student-management-system-backend-78t4.onrender.com";
+const REACT_APP_URL = process.env.REACT_APP_URL;
 
 export const register = async (username, password, role) => {
   try {
@@ -15,9 +14,11 @@ export const register = async (username, password, role) => {
     const rawData = await resRegister.text();
 
     let data;
+    console.log(REACT_APP_URL);
 
     try {
       data = rawData ? JSON.parse(rawData) : null;
+      console.log(data);
     } catch (raw) {
       console.log("Invalid JSON Response:", raw);
       throw new Error("Server did not return valid JSON");

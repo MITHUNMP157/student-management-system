@@ -11,7 +11,7 @@ const Register = () => {
     <div className="home-hero">
       <h2 className="welcome-title">
         Welcome{" "}
-        <span className="user-click" onClick={() => navigate("/studentDB")}>
+        <span className="user-click" onClick={() => navigate("/userprofile")}>
           {userName}
         </span>{" "}
         to Unity Collage of Institution...!

@@ -4,8 +4,6 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const port = 3030;
 const cors = require("cors");
-const mongoose = require("mongoose");
-const User = require("./models/UserModel.js");
 
 app.use(express.json());
 //app.use(cors());

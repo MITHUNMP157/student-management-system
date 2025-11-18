@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./StudentDetails.css";
+import "./StudentDB.css";
 import { ToastContainer } from "react-toastify";
 import { StudentContext } from "../../context/StudentContext";
 

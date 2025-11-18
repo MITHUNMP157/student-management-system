@@ -7,8 +7,7 @@ export const StudentContext = createContext();
 export const StudentProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const REACT_APP_URL =
-    "https://student-management-system-backend-78t4.onrender.com";
+  const REACT_APP_URL = process.env.REACT_APP_URL;
 
   /*StudentDataBase state use to GET/DELETE API Array purpose*/
   const [studentDataBase, setStudentDataBase] = useState([]);

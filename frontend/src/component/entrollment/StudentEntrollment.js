@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Register.css";
+import "./StudentEntrollment.css";
 import { ToastContainer } from "react-toastify";
 import { StudentContext } from "../../context/StudentContext";
 
@@ -104,9 +104,9 @@ const Register = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Enter password"
                   value={formData.password}
                   onChange={updateChange}
+                  disabled
                 />
               </div>
             </div>
