@@ -51,7 +51,7 @@ const RegisterPortal = () => {
     <div className=" row" style={{ marginTop: "50px" }}>
       <form onSubmit={handleSubmit} className="mt-2">
         <div className="  col p-1">
-          <div className="container card" style={{ width: "550px" }}>
+          <div className="container card" style={{ width: "400px" }}>
             <div className="card-body">
               <h1 className="text-primary">User Register</h1>
               <br />

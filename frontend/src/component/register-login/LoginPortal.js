@@ -50,7 +50,7 @@ const LoginPortal = () => {
   };
   return (
     <div style={{ marginTop: "50px" }}>
-      <div className="container" style={{ width: "500px" }}>
+      <div className="container" style={{ width: "400px" }}>
         <form
           onSubmit={handleSubmit}
           className="row g-3 d-flex justify-content-center align-items-center"
