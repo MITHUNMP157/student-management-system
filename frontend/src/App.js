@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Header from "./component/Header";
+import Header from "./component/header/Header";
 import Home from "./component/Home";
 import Register from "./component/entrollment/StudentEntrollment";
 import UserProfile from "./component/profile/UserProfile";
