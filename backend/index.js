@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
+    origin: ["https://student-management-system-frontend-ektr.onrender.com"], // your deployed frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
