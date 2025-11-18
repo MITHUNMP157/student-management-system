@@ -1,10 +1,11 @@
 import React from "react";
 
-const REACT_APP_URL = process.env.REACT_APP_URL;
+const REACT_APP_URL =
+  "https://student-management-system-backend-78t4.onrender.com";
 
 export const register = async (username, password, role) => {
   try {
-    const resRegister = await fetch(`${REACT_APP_URL}register`, {
+    const resRegister = await fetch(`${REACT_APP_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +36,7 @@ export const register = async (username, password, role) => {
 
 export const login = async (username, password) => {
   try {
-    const response = await fetch(`${REACT_APP_URL}login`, {
+    const response = await fetch(`${REACT_APP_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +69,7 @@ export const verifyToken = async () => {
   const token = localStorage.getItem("token");
   if (!token) return { valid: false };
   try {
-    const response = await fetch(`${REACT_APP_URL}verifyToken`, {
+    const response = await fetch(`${REACT_APP_URL}/verifyToken`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

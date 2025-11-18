@@ -7,7 +7,8 @@ export const StudentContext = createContext();
 export const StudentProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  const REACT_APP_URL = process.env.REACT_APP_URL;
+  const REACT_APP_URL =
+    "https://student-management-system-backend-78t4.onrender.com";
 
   /*StudentDataBase state use to GET/DELETE API Array purpose*/
   const [studentDataBase, setStudentDataBase] = useState([]);
@@ -89,7 +90,7 @@ export const StudentProvider = ({ children }) => {
       /*Update API*/
 
       try {
-        const res = await fetch(`${REACT_APP_URL}editdata/${formData._id}`, {
+        const res = await fetch(`${REACT_APP_URL}/editdata/${formData._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -110,7 +111,7 @@ export const StudentProvider = ({ children }) => {
       /*Upload(New Register) API*/
 
       try {
-        const res = await fetch(`${REACT_APP_URL}studentRegister`, {
+        const res = await fetch(`${REACT_APP_URL}/studentRegister`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -143,7 +144,7 @@ export const StudentProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(`${REACT_APP_URL}getdata`, {
+      const res = await fetch(`${REACT_APP_URL}/getdata`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -160,7 +161,7 @@ export const StudentProvider = ({ children }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(`${REACT_APP_URL}getdata/managementDB`, {
+      const res = await fetch(`${REACT_APP_URL}/getdata/managementDB`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -186,7 +187,7 @@ export const StudentProvider = ({ children }) => {
 
   /*Delete API*/
   const deleteData = (id) => {
-    fetch(`${REACT_APP_URL}delete/${id}`, {
+    fetch(`${REACT_APP_URL}/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
