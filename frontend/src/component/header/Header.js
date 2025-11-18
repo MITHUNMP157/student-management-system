@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import { logout } from "./auth/Auth";
+import { logout } from "../auth/Auth";
+import CollageLogo from "./CollageLogo";
 
 const Header = ({ setIsLoggedIn }) => {
   return (
@@ -10,15 +11,7 @@ const Header = ({ setIsLoggedIn }) => {
       <header>
         <div className="header-header">
           <div className="nav-bar">
-            <div className="logo">
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <h3>
-                  Mid-State
-                  <br />
-                  Institute of Technology (MSIT)
-                </h3>
-              </Link>
-            </div>
+            <CollageLogo />
             <div className="nav-item" id="navitems">
               <ul>
                 <li>

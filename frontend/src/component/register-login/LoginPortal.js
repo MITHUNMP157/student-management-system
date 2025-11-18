@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { login } from "../auth/Auth";
+import CollageLogo from "../header/CollageLogo";
 
 const LoginPortal = () => {
   const [userLoginData, setUserLoginData] = useState({
@@ -51,6 +52,7 @@ const LoginPortal = () => {
   return (
     <div style={{ marginTop: "50px" }}>
       <div className="container" style={{ width: "400px" }}>
+        <CollageLogo />
         <form
           onSubmit={handleSubmit}
           className="row g-3 d-flex justify-content-center align-items-center"
