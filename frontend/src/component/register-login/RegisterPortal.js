@@ -50,7 +50,7 @@ const RegisterPortal = () => {
   return (
     <div className=" row" style={{ marginTop: "50px" }}>
       <form onSubmit={handleSubmit} className="mt-2">
-        <div className="  col p-1">
+        <div className=" col p-1">
           <div className="container card" style={{ width: "400px" }}>
             <div className="card-body">
               <h1 className="text-primary">User Register</h1>
@@ -91,12 +91,12 @@ const RegisterPortal = () => {
                 </select>
               </div>
               <div>
-                <button className="register-btn btn btn-primary mt-2 ms-5">
+                <button className="register-btn btn btn-primary mt-2 ms-3">
                   Register
                 </button>
               </div>
               <Link to="/login-portal" style={{ textDecoration: "none" }}>
-                <p className="text-dark text-end">Click to Login</p>
+                <p className="text-secondary text-end mt-3">Click to Login</p>
               </Link>
             </div>
           </div>
