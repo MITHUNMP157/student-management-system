@@ -91,7 +91,7 @@ const RegisterPortal = () => {
                 </select>
               </div>
               <div>
-                <button className="register-btn btn btn-primary mt-2 ms-3">
+                <button className="register-btn btn btn-primary mt-2">
                   Register
                 </button>
               </div>
