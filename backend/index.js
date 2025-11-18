@@ -8,25 +8,15 @@ const mongoose = require("mongoose");
 const User = require("./models/UserModel.js");
 
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 
-// const allowedOrigins = [
-//   "https://student-management-system-frontend-ektr.onrender.com",
-//   "http://localhost:3000",
-// ];
-
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || allowedOrigins.includes(origin)) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://ecommerce-v1-xvv0.onrender.com"], // your deployed frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 const users = [];
 
